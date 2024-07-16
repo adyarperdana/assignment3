@@ -18,12 +18,12 @@ function subArray(arr) {
     let nilaimax = 0;
     let subarray = [];
     for (let i = 0; i < arr.length; i++) {
-        let nilai = arr[i];
-        for (let j = i+1; j < arr.length; j++) {
-            nilai += arr[j];
-            if (nilaimax < nilai) {
-                nilaimax = nilai;
-                subarray = arr.slice(i,j+1);
+        let nilaisum = 0;
+        for (let j = i; j < arr.length; j++) {
+            nilaisum += arr[j];
+            if (nilaisum > nilaimax) {
+                nilaimax = nilaisum;
+                subarray = arr.slice(i, j + 1);
             }
         }
     }
