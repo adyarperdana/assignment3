@@ -6,24 +6,22 @@
   Masing-masing dimensi array terdiri 2 angka yang jika dijumlahkan mempunyai nilai yang sama dengan parameter 2.
  */
 
+
 function sumArray(arr, int) {
   let temp = "";
-  let sum = [];
-
+  let result = [];
   for (let i = 0; i < arr.length; i++) {
-    for (let j = 0; j < arr.length; j++) {
+    for (let j = i + 1; j < arr.length; j++) {
       if (i != j && !temp.includes(i)) {
-        if (arr[i]+arr[j] === int) {
-          temp += j;
-          console.log(temp);
-          sum.push([arr[i],arr[j]])
+        if (arr[i] + arr[j] === int) {
+            temp += j;
+            result.push([arr[i], arr[j]]);
+          }
         }
       }
-    }
   }
-  return sum;
+  return result;
 }
-
 // Test Cases
 console.log(sumArray([2, 1, 4, 3], 5)); // [[2, 3], [1, 4]]
 console.log(sumArray([1, 8, 10, 3], 11)); // [[1, 10], [8, 3]]
