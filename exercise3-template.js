@@ -15,6 +15,7 @@ function sumArray(arr, int) {
       if (i != j && !temp.includes(i)) {
         if (arr[i] + arr[j] === int) {
             temp += j;
+            //console.log(temp);
             result.push([arr[i], arr[j]]);
           }
         }
@@ -22,6 +23,7 @@ function sumArray(arr, int) {
   }
   return result;
 }
+
 // Test Cases
 console.log(sumArray([2, 1, 4, 3], 5)); // [[2, 3], [1, 4]]
 console.log(sumArray([1, 8, 10, 3], 11)); // [[1, 10], [8, 3]]
